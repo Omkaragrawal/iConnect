@@ -9,6 +9,8 @@ const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const session = require("express-session");
 const bodyParser = require('body-parser');
+const myIP = require('ipify');
+
 
 
 
@@ -16,14 +18,16 @@ const bodyParser = require('body-parser');
 
 // const redis = require('redis');
 
-
+(async () => {
+  console.log(await myIP());
+})();
 const indexRouter = require('./routes/index');
 const mentorRouter = require('./routes/mentors');
 const studentRouter = require('./routes/students');
-const logDirectory = path.join(__dirname, 'logs')
+const logDirectory = path.join(__dirname, 'logs');
 // const redis_Client = redis.createClient({host: "redis-15359.c228.us-central1-1.gce.cloud.redislabs.com", port: "15359", password: "vpz6O15TOOUwofDpCWaFELjnP1X1msil", db: "trialdb-iconnect", socket_keepalive: true});
 const app = express();
-fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory)
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 const accessLogStream = rfs.createStream('access.log', {
   interval: '1d',
   path: logDirectory,
