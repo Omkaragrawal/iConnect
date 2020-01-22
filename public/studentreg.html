@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script type="text/javascript" src="dist/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.7/purify.min.js" integrity="sha256-iO9yO1Iy0P2hJNUeAvUQR2ielSsGJ4rOvK+EQUXxb6E=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <style>
@@ -40,7 +40,7 @@
                 </h4>
                 <div style="margin: 30px;">
 
-                    <form action="/login" method="GET" enctype="application/x-www-form-urlencoded" autocomplete="on"><!-- onSubmit="return checkForm()">-->
+                    <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded" autocomplete="on"><!-- onSubmit="return checkForm()">-->
 
                         <div class="input-field col s12">
                             <input id="name" name="name" required type="text" class="validate" maxlength="40" placeholder="Enter Full Name" autofocus>
