@@ -32,9 +32,13 @@ router.get('/', function (req, res, next) {
   res.render('index');
 });
 
-router.get('/login', (req, res) => {
-  res.render('login');
-});
+router.get('/userHome', (req, res) => {
+  res.send(`This is landing page of the user`)
+})
+
+// router.get('/login', (req, res) => {
+//   res.render('login');
+// });
 
 router.get('/register-student', (req, res) => {
   res.render('studentreg');
@@ -43,6 +47,9 @@ router.get('/register-student', (req, res) => {
 router.get('/logout', function (req, res) {
   delete req.session.auth;
   res.send('Logout successfull');
+});
+router.get('/login', (req,res) =>{
+  res.send('SUCCESS');
 });
 
 
@@ -109,7 +116,7 @@ router.get('/HOME', (req, res) => {
 // });
 
 router.post('/login', (req,res) =>{
-  res.redirect('/HOME');
+  res.send('SUCCESS');
 });
 
 router.post("/signup", [
