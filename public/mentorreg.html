@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/mentorReg.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .popins-bold {
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+    }
+</style>
+
+<body style="background: #F8C346;">
+
+
+    <div class="container">
+        <div class="row" style="margin-top: 10%;">
+            <div class="col s12">
+                <div class="card white hide-on-med-and-down" style="border-radius: 3%;">
+                    <div class="card-content black-text">
+                        <div class="row">
+                            <div data-tilt class="col s6">
+                                <img src="images/pic.png" alt="">
+                            </div>
+                            <div class="col s6 hide-on-med-and-down">
+                                <span class="card-title center popins-bold" style="margin-top: 10%;"> Mentor
+                                    Registration</span>
+
+                                <form action="/login.html" method="POST" enctype="application/x-www-form-urlencoded">
+                                    <div style="padding:20px;border-radius: 50px;margin: 30px 30px 10px 30px ;">
+                                        <input placeholder="Enter Name" id="name" type="text" class="validate">
+                                    </div>
+
+                                    <div style="padding:20px;border-radius: 50px;margin: 0px 30px 10px 30px;">
+                                        <input placeholder="Expertise Field" id="expertise" type="text"
+                                            class="validate">
+                                    </div>
+
+                                    <div style="padding:20px;border-radius: 50px;margin: 0px 30px 10px 30px;">
+                                        <input placeholder="Mobile Number" id="mobilenum" type="text" class="validate"
+                                            maxlength="10">
+                                    </div>
+                                    <!-- <label for="first_name">First Name</label> -->
+                                    <div class="center">
+                                        <button class="btn waves-effect waves-light" type="submit" name="action"
+                                            style="background:#217AEC">Submit
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col s12 show-on-small hide-on-med-and-up">
+
+                    <div class="card white" style="border-radius: 3%; height: 90vh;">
+
+                        <div class="center" style="padding-top:3%;">
+
+                            <h4 class="center popins-bold"> Mentor <br> Registration</h4>
+
+                        </div>
+                        <div class="container">
+
+                            <form action="#">
+
+
+
+                                <div class="input-field col s12">
+                                    <input id="name" type="text" class="validate" placeholder="Enter Name">
+                                    <!-- <label for="name">Full Name</label> -->
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <input id="expertise" type="text" class="validate" placeholder="Expertise ">
+                                    <!-- <label for="email">Email</label> -->
+                                    <!-- <span class="helper-text" data-error="Invalid Email Id"> </span> -->
+
+                                </div>
+
+                                <div class="input-field col s12">
+                                    <input id="mobilenum" type="text" class="validate" maxlength="10"
+                                        placeholder="Enter Mobile Number">
+                                    <!-- <label for="mobilenum">Mobile Number </label> -->
+                                </div>
+
+                                <div class="center">
+                                    <button class="btn waves-effect waves-light" type="submit" name="action"
+                                        style="background:#217AEC">Submit
+                                    </button>
+                                </div>
+
+
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <script>
+                    M.AutoInit();
+                </script>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+</body>
+
+</html>
