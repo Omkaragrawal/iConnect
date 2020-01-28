@@ -7,12 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="stylesheets/mentorReg.css">
+    <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.7/purify.min.js" integrity="sha256-iO9yO1Iy0P2hJNUeAvUQR2ielSsGJ4rOvK+EQUXxb6E=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <style>
@@ -24,6 +23,7 @@
         font-family: 'Poppins', sans-serif;
         color: #333;
     }
+
 </style>
 
 <body style="background: #F8C346;">
@@ -42,24 +42,37 @@
                                 <span class="card-title center popins-bold" style="margin-top: 10%;"> Mentor
                                     Registration</span>
 
-                                <form action="/login" method="GET" enctype="application/x-www-form-urlencoded">
+                                <form action="#">
                                     <div style="padding:20px;border-radius: 50px;margin: 30px 30px 10px 30px ;">
                                         <input placeholder="Enter Name" id="name" type="text" class="validate">
                                     </div>
 
+
                                     <div style="padding:20px;border-radius: 50px;margin: 0px 30px 10px 30px;">
-                                        <input placeholder="Expertise Field" id="expertise" type="text"
-                                            class="validate">
+                                        <input placeholder="Profile" id="profile" type="text" class="validate" maxlength="150">
                                     </div>
 
                                     <div style="padding:20px;border-radius: 50px;margin: 0px 30px 10px 30px;">
-                                        <input placeholder="Mobile Number" id="mobilenum" type="text" class="validate"
-                                            maxlength="10">
+                                        <input placeholder="Linkedln Url" id="url" type="url" class="validate">
                                     </div>
+
+                                    <div style="padding:20px;border-radius: 50px;margin: 0px 30px 10px 30px;">
+                                        <input placeholder="Email ID" id="email" type="email" class="validate">
+                                    </div>
+
+
+                                    <div style="padding:20px;border-radius: 50px;margin: 0px 30px 10px 30px;">
+                                        <input placeholder="Mobile Number" id="mobilenum" type="text" class="validate" maxlength="10">
+                                    </div>
+
+
+                                    <div style="padding:20px;border-radius: 50px;margin: 0px 30px 10px 30px;">
+                                        <input placeholder="Interests" id="interests" type="text" class="validate">
+                                    </div>
+
                                     <!-- <label for="first_name">First Name</label> -->
                                     <div class="center">
-                                        <button class="btn waves-effect waves-light" type="submit"
-                                            style="background:#217AEC">Submit
+                                        <button class="btn waves-effect waves-light" type="submit" name="action" style="background:#217AEC">Submit
                                         </button>
                                     </div>
                                 </form>
@@ -80,7 +93,7 @@
                         </div>
                         <div class="container">
 
-                            <form action="/login" method="GET" enctype="application/x-www-form-urlencoded">
+                            <form action="#">
 
 
 
@@ -97,14 +110,12 @@
                                 </div>
 
                                 <div class="input-field col s12">
-                                    <input id="mobilenum" type="text" class="validate" maxlength="10"
-                                        placeholder="Enter Mobile Number">
+                                    <input id="mobilenum" type="text" class="validate" maxlength="10" placeholder="Enter Mobile Number">
                                     <!-- <label for="mobilenum">Mobile Number </label> -->
                                 </div>
 
                                 <div class="center">
-                                    <button class="btn waves-effect waves-light" type="submit" name="action"
-                                        style="background:#217AEC">Submit
+                                    <button class="btn waves-effect waves-light" type="submit" name="action" style="background:#217AEC">Submit
                                     </button>
                                 </div>
 
@@ -122,6 +133,7 @@
 
                 <script>
                     M.AutoInit();
+
                 </script>
 
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
