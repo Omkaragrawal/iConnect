@@ -1,0 +1,1 @@
+insert into public.students (name, gender, dob, moodle_id, email, password, mobile, interests) Values ('Default', 'm', '16/10/1998', '1234567890', 'default@default.com', 'password', '0123456789', '{"names":["abc","default"]}');

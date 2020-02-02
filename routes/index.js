@@ -11,16 +11,37 @@ const {
 } = require('express-validator');
 
 
-const dbConfig = {
-  user: "omkaragrawal", //"process.env.USER",
-  database: "users", //"process.env.DB",
-  host: "35.244.17.183", //"process.env.HOST",
-  port: '5432',
-  password: "omkar.16", //"process.env.PASSWORD",
-  ssl: "true"
-};
+// const dbConfig = {
+//   user: "omkaragrawal", //"process.env.USER",
+//   database: "users", //"process.env.DB",
+//   host: "35.244.17.183", //"process.env.HOST",
+//   port: '5432',
+//   password: "omkar.16", //"process.env.PASSWORD",
+//   ssl: "true"
+// };
 
-function hash(input, salt) {
+//local config  --> UPDATED
+// const dbConfig = {
+//   user: "omkaragrawal", //"process.env.USER",
+//   database: "iconnect_local", //"process.env.DB",
+//   host: "127.0.0.1", //"process.env.HOST",
+//   port: '5433',
+//   password: "omkaragrawal" //"process.env.PASSWORD",
+// };
+
+// HEROKU CONFIG ------> UPDATED
+const dbConfig = {
+    user: "wvnybpmuolndkw", //"process.env.USER",
+    database: "de09nbrec575il", //"process.env.DB",
+    host: "ec2-54-235-92-43.compute-1.amazonaws.com", //"process.env.HOST",
+    port: '5432',
+    password: "043f7bea451f8bb8766e4aa2ae4911ced02b93a575425bf52f37e5b4874d25de" //"process.env.PASSWORD",
+  };
+
+
+
+
+function hash(input, salt = (crypto.randomBytes(32)).toString('hex')) {
   var hashedKey = crypto.pbkdf2Sync(input, salt, 1000, 512, 'sha512');
   return (['pbkdf2sync', '1000', salt, hashedKey.toString('hex')].join('$$#'));
 }
@@ -33,8 +54,8 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/userHome', (req, res) => {
-  res.send(`This is landing page of the user`)
-})
+  res.send(`This is landing page of the user`);
+});
 
 // router.get('/login', (req, res) => {
 //   res.render('login');
@@ -61,7 +82,19 @@ router.get("/success", (req, res) => {
 router.get('/HOME', (req, res) => {
   res.render('home');
 
-})
+});
+
+router.get('/interests', async (req, res) => {
+  let allInterests;
+  try {
+    allInterests = await pgpool.query("select * from public.interests;");
+  } catch (error) {
+    console.log(error);
+    res.send(JSON.stringify(error));
+  }
+  console.log("SUCCESS");
+  res.send(allInterests.rows);
+});
 
 /* POST home page. */
 // router.post("/login", [
@@ -135,6 +168,17 @@ router.post("/signup", [
                                                                                             }
                                                                                           }),
                                             check('mobile').notEmpty().isMobilePhone("en-IN").withMessage("Invalid Mobile Number"),
+                                            check('bio').notEmpty().isLength({min: 1, max: 1000}),
+                                            check('linkedin').notEmpty().isURL(),
+                                            check('gender').notEmpty().isLength({min: 1, max: 1}).isLowercase().custom((value, {req}) => {
+                                              if( ['m', 'f', 'o'].indexOf(value) === -1) {
+                                                return Promise.reject('Incorrect Gender');
+                                              } else {
+                                                return true;
+                                              }
+                                            }),
+                                            check('dob').notEmpty().isISO8601(),
+                                            check('org').notEmpty().isLength({min: 4, max: 100})
                                             ], 
 async (req, res, next) => {
   const errors = validationResult(req);
@@ -148,8 +192,11 @@ res.status(404).send("NOT FOUND<br>" + util.inspect(req.body) + "<br><br>" + uti
 async (req, res) => {
   // res.send("Recieved\n" + util.inspect(req.body));
   try{
-    const query = `INSERT INTO public.user_details (name, email, password, mobile, organization, "currentYear", "isMentor", "isStudent", "isActive") VALUES ($1,$2,$3,$4,$5, $6, $7, $8, $9);`;
-    const data = [req.body.name, req.body.email, req.body.password,req.body.mobile,  req.body.organization, req.body.currentYear, req.body.isMentor, req.body.isStudent, true];
+    const pass = hash(req.body.password);
+    console.log(pass.length);
+    const query = `INSERT INTO public.mentors(name, gender, dob, email, password, mobile, interests, institution, bio, "linkedIn") VALUES ($1,$2,$3,$4,$5, $6, $7, $8, $9, $10);`;
+    const data = [req.body.name, req.body.gender, req.body.dob, req.body.email, pass,  req.body.mobile, JSON.stringify(req.body.interests), req.body.org, req.body.bio, req.body.linkedin];
+    console.log(data.length);
     console.log('at line 111: \t' + query);
     console.log('\nat line 112: \t' + util.inspect(data));
   const response = await pgpool.query(query,data);

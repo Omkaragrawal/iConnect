@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Verify your phone no.</title>
+</head>
+
+<body>
+
+
+    <button id="sendCode">Send Code</button>
+    <script>
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sendCode', {
+            'size': 'invisible',
+            'callback': function (recapchaToken) {
+                // reCAPTCHA solved, send recapchaToken and phone number to backend.
+
+                // a REST call to your backend
+                request.post({
+                    url: 'https://your-rest-api',
+                    body: {
+                        phoneNumber: document.getElementById('phoneNumber').value,
+                        recapchaToken,
+                    }
+                });
+            }
+        });
+
+        // render the rapchaVerifier. 
+        window.recaptchaVerifier.render().then(function (widgetId) {
+            window.recaptchaWidgetId = widgetId;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+ALTER SEQUENCE "iconnect_local"."public".students_id_seq RESTART WITH 1;

@@ -1,0 +1,75 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "type": "node",
+        "request": "attach",
+        "name": "Attach by Process ID",
+        "processId": "${command:PickProcess}",
+        "skipFiles": [
+            "<node_internals>/**"
+        ]
+    },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach",
+            "port": 3000,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Remote",
+            "address": "TCP/IP address of process to be debugged",
+            "port": 9229,
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "Absolute path to the remote directory containing the program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        },
+         {
+             "type": "node",
+             "request": "launch",
+             "name": "Launch via NPM",
+             "runtimeExecutable": "npm",
+             "runtimeArgs": [
+                 "run-script",
+                 "debug"
+             ],
+             "port": 9229,
+             "skipFiles": [
+                 "<node_internals>/**"
+             ]
+         },
+         {
+             "type": "node",
+             "request": "launch",
+             "name": "Launch Program",
+             "program": "${workspaceFolder}/app.js",
+             "skipFiles": [
+                 "<node_internals>/**"
+             ]
+         }, {
+             "type": "chrome",
+             "request": "attach",
+             "name": "Attach to Chrome",
+             "port": 9222,
+             "webRoot": "${workspaceFolder}"
+         }
+
+    ]
+}
