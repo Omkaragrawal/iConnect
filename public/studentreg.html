@@ -11,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.7/purify.min.js" integrity="sha256-iO9yO1Iy0P2hJNUeAvUQR2ielSsGJ4rOvK+EQUXxb6E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.7/purify.min.js"
+        integrity="sha256-iO9yO1Iy0P2hJNUeAvUQR2ielSsGJ4rOvK+EQUXxb6E=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <style>
@@ -40,35 +41,40 @@
                 </h4>
                 <div style="margin: 30px;">
 
-                    <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded" autocomplete="on"><!-- onSubmit="return checkForm()">-->
+                    <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded" autocomplete="on">
+                        <!-- onSubmit="return checkForm()">-->
 
                         <div class="input-field col s12">
-                            <input id="name" name="name" required type="text" class="validate" maxlength="40" placeholder="Enter Full Name" autofocus>
+                            <input id="name" name="name" required type="text" class="validate" maxlength="40"
+                                placeholder="Enter Full Name" autofocus>
                             <!-- <label for="name">Full Name</label> -->
                         </div>
 
                         <div class="input-field col s12">
-                            <input id="mobile" name="mobile" required type="text" class="validate" minlength="10" maxlength="10"
-                                placeholder="Enter Mobile Number">
+                            <input id="mobile" name="mobile" required type="text" class="validate" minlength="10"
+                                maxlength="10" placeholder="Enter Mobile Number">
                             <!-- <label for="mobilenum">Mobile Number </label> -->
                         </div>
 
                         <div class="input-field col s12">
-                            <input id="email" name="email" required type="text" class="validate" placeholder="Enter Email ">
+                            <input id="email" name="email" required type="text" class="validate"
+                                placeholder="Enter Email ">
                             <!-- <label for="email">Email</label> -->
                             <span class="helper-text" data-error="Invalid Email Id"> </span>
 
                         </div>
 
                         <div class="input-field col s12">
-                            <input id="password" name="password" required type="password" minlength="7" maxlength="20" class="validate" placeholder="Enter Password">
-                            <input id="password" name="confirmPassword" required type="password" class="validate" placeholder="Re-enter Password">
+                            <input id="password" name="password" required type="password" minlength="7" maxlength="20"
+                                class="validate" placeholder="Enter Password">
+                            <input id="password" name="confirmPassword" required type="password" class="validate"
+                                placeholder="Re-enter Password">
 
                             <!-- <label for="password">Password</label> -->
                         </div>
 
                         <div hidden>
-                            <select name="organization" hidden >
+                            <select name="organization" hidden>
                                 <!-- <option value="" disabled selected>Choose Your College</option> -->
                                 <option value="APSIT" selected>Ap. Shah college Institute of Technology</option>
                                 <!-- <option value="TCOE">Theem College of Engineering</option>
@@ -99,10 +105,9 @@
                                 <option value="true" selected>True</option>
                             </select>
                         </div>
-                        
+
                         <div class="center">
-                            <button class="btn waves-effect waves-light"
-                                style="background:#217AEC">Submit
+                            <button class="btn waves-effect waves-light" style="background:#217AEC">Submit
                             </button>
                             <button type="submit" style="background:#217AEC" hidden="true">Submit
                             </button>
