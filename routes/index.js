@@ -20,6 +20,16 @@ const {
 //   ssl: "true"
 // };
 
+//google-cloud-postgres apsit-a721d
+const dbConfig = {
+    user: "omkaragrawal", //"process.env.USER",
+    database: "iconnect", //"process.env.DB",
+    host: "34.93.136.3", //"process.env.HOST",
+    port: '5432',
+    password: "omkar.16", //"process.env.PASSWORD",
+    ssl: "true"
+  };
+
 //local config  --> UPDATED
 // const dbConfig = {
 //   user: "omkaragrawal", //"process.env.USER",
@@ -30,13 +40,13 @@ const {
 // };
 
 // HEROKU CONFIG ------> UPDATED
-const dbConfig = {
-    user: "wvnybpmuolndkw", //"process.env.USER",
-    database: "de09nbrec575il", //"process.env.DB",
-    host: "ec2-54-235-92-43.compute-1.amazonaws.com", //"process.env.HOST",
-    port: '5432',
-    password: "043f7bea451f8bb8766e4aa2ae4911ced02b93a575425bf52f37e5b4874d25de" //"process.env.PASSWORD",
-  };
+// const dbConfig = {
+//     user: "wvnybpmuolndkw", //"process.env.USER",
+//     database: "de09nbrec575il", //"process.env.DB",
+//     host: "ec2-54-235-92-43.compute-1.amazonaws.com", //"process.env.HOST",
+//     port: '5432',
+//     password: "043f7bea451f8bb8766e4aa2ae4911ced02b93a575425bf52f37e5b4874d25de" //"process.env.PASSWORD",
+//   };
 
 
 
@@ -194,8 +204,8 @@ async (req, res) => {
   try{
     const pass = hash(req.body.password);
     console.log(pass.length);
-    const query = `INSERT INTO public.mentors(name, gender, dob, email, password, mobile, interests, institution, bio, "linkedIn") VALUES ($1,$2,$3,$4,$5, $6, $7, $8, $9, $10);`;
-    const data = [req.body.name, req.body.gender, req.body.dob, req.body.email, pass,  req.body.mobile, JSON.stringify(req.body.interests), req.body.org, req.body.bio, req.body.linkedin];
+    const query = `INSERT INTO public.mentors(name, gender, dob, email, password, bio, "linkedin", institution, interests, mobile) VALUES ($1,$2,$3,$4,$5, $6, $7, $8, $9, $10);`;
+    const data = [req.body.name, req.body.gender, req.body.dob, req.body.email, pass,  req.body.bio, req.body.linkedin, req.body.org, JSON.stringify(req.body.interests), req.body.mobile];
     console.log(data.length);
     console.log('at line 111: \t' + query);
     console.log('\nat line 112: \t' + util.inspect(data));

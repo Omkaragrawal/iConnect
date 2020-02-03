@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="col s5"
                                         style="padding:20px;border-radius: 50px;margin: 0px 30px 10px 30px;">
-                                        <input type="text" class="datepicker" name="dob" id="dob" required
+                                        <input type="date" class="validate" name="dob" id="dob" required
                                             placeholder="Enter Date of Birth">
                                     </div>
 
@@ -88,7 +88,7 @@
                                     <div class="col s5"
                                         style="padding:20px;border-radius: 50px;margin: 0px 30px 10px 30px;">
                                         <input placeholder="Mobile Number" name="mobile" required id="mobilenum"
-                                            type="text" class="validate" pattern="[7-9]{3}[0-9]{7}">
+                                            type="text" class="validate" >
                                     </div>
 
                                     <div class="col s5"
@@ -140,7 +140,7 @@
                                         <div class="input-field">
                                             <textarea id="textarea1" class="materialize-textarea"
                                                 placeholder="Please enter your bio here max is 1000 alphabets"
-                                                id="profile" name="profile"></textarea>
+                                                id="bio" name="bio"></textarea>
                                         </div>
                                     </div>
 
@@ -199,7 +199,7 @@
 
 
                                 <div style="padding:20px;border-radius: 50px;">
-                                    <input type="text" class="datepicker" name="dob" id="dob" required
+                                    <input type="text" class="validate" name="dob" id="dob" required
                                         placeholder="Enter Date of Birth">
                                 </div>
 
@@ -220,7 +220,7 @@
 
                                 <div style="padding:20px;border-radius: 50px;">
                                     <input placeholder="Mobile Number" name="mobile" required id="mobilenum" type="text"
-                                        class="validate" pattern="[7-9]{3}[0-9]{7}">
+                                        class="validate" >
                                 </div>
 
                                 <div style="padding:20px;border-radius: 50px;">
@@ -354,8 +354,31 @@
         }
         password.onchange = validatepassword;
         passwordC.onkeyup = validatepassword;
+    });
 </script>
 
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<!-- Initialize Firebase -->
+<script>
+    // TODO: Replace the following with your app's Firebase project configuration
+var firebaseConfig = {
+  // ...
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+</script>
 </body>
 
 </html>
