@@ -338,6 +338,26 @@
 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        var password = document.getElementById("password");
+        var passwordC = document.getElementById("passwordC");
+
+        function validatepassword(){
+            if(password.value != passwordC.value){
+                passwordC.setCustomValidity("Passwords don't match");
+            }
+            else{
+                passwordC.setCustomValidity("");
+            }
+        }
+        password.onchange = validatepassword;
+        passwordC.onkeyup = validatepassword;
+
+    });
+</script>
+
 </body>
 
 </html>
