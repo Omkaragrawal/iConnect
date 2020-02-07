@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard | {{Name}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.7/purify.min.js"
+        integrity="sha256-iO9yO1Iy0P2hJNUeAvUQR2ielSsGJ4rOvK+EQUXxb6E=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    header,
+    main,
+    footer {
+        padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+
+        header,
+        main,
+        footer {
+            padding-left: 0;
+        }
+    }
+</style>
+
+<body style="background:#F8C346">
+
+
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li>
+            <div class=" nav-wrapper z-depth-1 hoverable"
+                style="margin: 4%;padding:0px 10px 0px 10px;border-radius: 15px;">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <!-- <i class="material-icons" onclick="clear()">close</i> -->
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li><a href="#!">First Sidebar Link</a></li>
+        <li><a href="#!">Second Sidebar Link</a></li>
+        <li><a href="#!">First Sidebar Link</a></li>
+        <li><a href="#!">Second Sidebar Link</a></li>
+        <li><a href="#!">First Sidebar Link</a></li>
+        <li><a href="#!">Second Sidebar Link</a></li>
+        <li><a href="#!">First Sidebar Link</a></li>
+        <li><a href="#!">Second Sidebar Link</a></li>
+        <li><a href="#!">First Sidebar Link</a></li>
+        <li><a href="#!">Second Sidebar Link</a></li>
+        <li><a href="#!">First Sidebar Link</a></li>
+        <li><a href="#!">Second Sidebar Link</a></li>
+    </ul>
+    <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i
+                            class="material-icons right">face</i></a>
+                    <!-- <a href="#!" class="brand-logo right"><i class="large material-icons">account_circle</i></a>
+                        -->
+                    <!-- <ul class="right hide-on-med-and-down">
+                        <li><a href="sass.html">Sass</a></li>
+                        <li><a href="badges.html">Components</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+    </ul>
+    <div style="margin-left: 21%;">
+        <div class="container">
+            <h4>Select by Expertise</h4>
+
+
+            <div class="row" style="margin-top: 8%;">
+                <div class="col s4">
+                    <div class="card hoverable" style="border-radius: 15px;">
+                        <div class="card-content" style="padding:24px 24px 10px 24px">
+                            <div class="center">
+                                <img src="images/person.jpg" alt="" class="circle" width="80"
+                                    style="margin-top: -200px;">
+                            </div>
+                            <span class="card-title center">Mentor Name</span>
+                            <p>
+                                Expertise: Expertise name
+                            </p>
+                            <div class="row" style="margin-top: 30px;">
+                                <div class="container">
+                                    <i class="material-icons">contact_mail</i>
+                                    <i class="material-icons right">chat</i>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col s4">
+                    <div class="card hoverable" style="border-radius: 15px;">
+                        <div class="card-content" style="padding:24px 24px 10px 24px">
+                            <div class="center">
+                                <img src="images/person.jpg" alt="" class="circle" width="80"
+                                    style="margin-top: -200px;">
+                            </div>
+                            <span class="card-title center">Mentor Name</span>
+                            <p>
+                                Expertise: Expertise name
+                            </p>
+                            <div class="row" style="margin-top: 30px;">
+                                <div class="container">
+                                    <i class="material-icons">contact_mail</i>
+                                    <i class="material-icons right">chat</i>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="col s4">
+                    <div class="card hoverable" style="border-radius: 15px;">
+                        <div class="card-content" style="padding:24px 24px 10px 24px">
+                            <div class="center">
+                                <img src="images/person.jpg" alt="" class="circle" width="80"
+                                    style="margin-top: -200px;">
+                            </div>
+                            <span class="card-title center">Mentor Name</span>
+                            <p>
+                                Expertise: Expertise name
+                            </p>
+                            <div class="row" style="margin-top: 30px;">
+                                <div class="container">
+                                    <i class="material-icons">contact_mail</i>
+                                    <i class="material-icons right">chat</i>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('.dropdown-trigger').dropdown();
+        });
+    </script>
+</body>
+
+</html>
