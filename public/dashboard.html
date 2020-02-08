@@ -111,8 +111,9 @@
                             </p>
                             <div class="row" style="margin-top: 30px;">
                                 <div class="container">
-                                    <i class="material-icons">contact_mail</i>
-                                    <i class="material-icons right">chat</i>
+                                    <i class="material-icons" style="color: #F8C346;">contact_mail</i>
+                                    <a class="modal-trigger" href="#modal1"><i class="material-icons right "
+                                            style="color: #F8C346;">chat</i></a>
                                 </div>
                             </div>
                         </div>
@@ -138,8 +139,9 @@
                             </p>
                             <div class="row" style="margin-top: 30px;">
                                 <div class="container">
-                                    <i class="material-icons">contact_mail</i>
-                                    <i class="material-icons right">chat</i>
+                                    <i class="material-icons" style="color: #F8C346;">contact_mail</i>
+                                    <a class="modal-trigger" href="#modal1"><i class="material-icons right "
+                                            style="color: #F8C346;">chat</i></a>
                                 </div>
                             </div>
                         </div>
@@ -167,8 +169,12 @@
                             </p>
                             <div class="row" style="margin-top: 30px;">
                                 <div class="container">
-                                    <i class="material-icons">contact_mail</i>
-                                    <i class="material-icons right">chat</i>
+                                    <i class="material-icons" style="color: #F8C346;">contact_mail</i>
+                                    <a class="modal-trigger" href="#modal1"><i class="material-icons right "
+                                            style="color: #F8C346;">chat</i></a>
+                                    <!-- <a><i class="material-icons right modal-trigger" data-target="modal1"
+                                            style="color: #F8C346;">chat</i></a> -->
+                                    <!-- <button data-target="modal1" class=" modal-trigger right">Modal</button > -->
                                 </div>
                             </div>
                         </div>
@@ -185,8 +191,25 @@
         </div>
 
     </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Chat Box</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+
+
     <script>
-        $(document).ready(function() {
+        M.AutoInit()
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $('.modal').modal();
             $('.dropdown-trigger').dropdown();
         });
     </script>
