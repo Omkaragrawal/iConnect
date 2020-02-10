@@ -41,7 +41,8 @@
                 </h4>
                 <div style="margin: 30px;">
 
-                    <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded" autocomplete="on">
+                    <form action="/signupStudent" method="POST" enctype="application/x-www-form-urlencoded"
+                        autocomplete="on">
                         <!-- onSubmit="return checkForm()">-->
 
                         <div class="input-field col s12">
@@ -51,8 +52,14 @@
                         </div>
 
                         <div class="input-field col s12">
+                            <input id="moodel_id" name="moodel_id" required type="text" class="validate" minlength="8"
+                                maxlength="8" placeholder="Enter Moodle Number">
+                            <!-- <label for="mobilenum">Mobile Number </label> -->
+                        </div>
+
+                        <div class="input-field col s12">
                             <input id="mobile" name="mobile" required type="text" class="validate" minlength="10"
-                                maxlength="10" placeholder="Enter Mobile Number">
+                                maxlength="15" placeholder="Enter Mobile id">
                             <!-- <label for="mobilenum">Mobile Number </label> -->
                         </div>
 
@@ -71,6 +78,46 @@
                                 placeholder="Re-enter Password">
 
                             <!-- <label for="password">Password</label> -->
+                        </div>
+
+                        <div class="input-field col s12">
+                            <select name="gender" id="gender" class="validate" required>
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="m">MALE</option>
+                                <option value="f">FEMALE</option>
+                                <option value="o">OTHERS</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12" id="insertSelect">
+                            <select name="interests" id="interests" multiple class="validate" required>
+                                <option value="" disabled selected>Select Interest/s: </option>
+                                <option value="1">Backend Developement</option>
+                                <option value="2">Frontend Developement</option>
+                                <option value="3">Machine Learning</option>
+                                <option value="4">Deep Learning</option>
+                                <option value="5">Computer Vision</option>
+                                <option value="6">Graphics Designing</option>
+                                <option value="7">Game Developement</option>
+                                <option value="8">IOT</option>
+                                <option value="9">Software Engineering</option>
+                                <option value="10">Devops</option>
+                                <option value="11">Theoritical Computing</option>
+                                <option value="12">Compiler Design</option>
+                                <option value="13">Computer Networking</option>
+                                <option value="14">Computer Security</option>
+                                <option value="15">Information Security</option>
+                                <option value="16">Hardware</option>
+                                <option value="17">Blockchain</option>
+                                <option value="18">NLP</option>
+                                <option value="19">Quantum Computing</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <textarea id="textarea1" class="materialize-textarea"
+                                placeholder="Please enter your bio here max is 1000 alphabets" id="bio"
+                                name="bio"></textarea>
                         </div>
 
                         <div hidden>

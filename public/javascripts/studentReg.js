@@ -28,20 +28,28 @@
 //     document.getElementById('name').value = DOMPurify.sanitize(document.getElementById('name').value);
 // }
 
-document.getElementById('name').addEventListener("focusout", (event) => {
-    console.log(event.srcElement);
-    event.srcElement.value = DOMPurify.sanitize(event.srcElement.value);
+// document.getElementById('name').addEventListener("focusout", (event) => {
+//     console.log(event.srcElement);
+//     event.srcElement.value = DOMPurify.sanitize(event.srcElement.value);
 
-});
+// });
 
-document.getElementById('mobile').addEventListener("focusout", (event) => {
-    console.log(event.srcElement);
-    event.srcElement.value = DOMPurify.sanitize(event.srcElement.value);
+// document.getElementById('mobile').addEventListener("focusout", (event) => {
+//     console.log(event.srcElement);
+//     event.srcElement.value = DOMPurify.sanitize(event.srcElement.value);
 
-});
+// });
 
-document.getElementById('email').addEventListener("focusout", (event) => {
-    console.log(event.srcElement);
-    event.srcElement.value = DOMPurify.sanitize(event.srcElement.value);
+// document.getElementById('email').addEventListener("focusout", (event) => {
+//     console.log(event.srcElement);
+//     event.srcElement.value = DOMPurify.sanitize(event.srcElement.value);
 
-});
+// });
+
+document.forms[0].addEventListener('submit', (event) => {
+    console.log(event)
+    for(input of document.forms[0]) {
+      console.log(input);
+    }
+    return false;
+  });

@@ -41,7 +41,7 @@
                                 <h4 class="center popins-bold" style="margin-top: 10%;"> Mentor
                                     Registration</h4>
 
-                                <form action="/signup" method="POST" enctype="application/x-www-form-urlencoded">
+                                <form action="/signupMentor" method="POST" enctype="application/x-www-form-urlencoded">
                                     <div class="row">
                                         <div class="col s12">
                                             <div class="col s5"
@@ -378,6 +378,20 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+</script>
+
+
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LeUmdYUAAAAAKlLWFmo8YazRF-7l_piozfkUGyo"></script>
+<script>
+grecaptcha.ready(function() {
+    grecaptcha.execute('6LeUmdYUAAAAAKlLWFmo8YazRF-7l_piozfkUGyo', {action: 'e_commerce'}).then(function(token) {
+        console.log(token);
+       alert(token);
+    }).catch((cause) => {
+        console.log(cause);
+    }); 
+});
 </script>
 </body>
 
