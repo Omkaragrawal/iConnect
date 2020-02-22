@@ -448,6 +448,17 @@ router.post('/login', [
 //   }
 // });
 
+router.post("/searchMentor", (req, res) => {
+  console.log(util.inspect(req.body));
+  console.log(`Select id, name, bio from public.mentors where lower(name) like lower('%${req.body.searchMentor}%');`)
+  pgpool.query(`Select id, name, bio from public.mentors where lower(name) like lower('%${req.body.searchMentor}%');`)
+  .then(results => {
+    res.send(results.rows);
+  })
+  .catch(error => {
+    res.send(error);
+  });
+});
 
 
 
