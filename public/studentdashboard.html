@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <!-- Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
 </head>
 <style>
@@ -69,12 +71,27 @@
                 <div class="container">
                     <form>
                         <div class="input-field">
-                            <input id="search" type="search" required>
-                            <label class="label-icon" for="search"><i class="material-icons"
+                            <input type="search" id="searchMentor" required >
+                            <label class="label-icon"><i class="material-icons"
                                     style="margin-top: 50%;">search</i></label>
                             <i class="material-icons" style="margin-top: 1%;">close</i>
                         </div>
                     </form>
+
+<!-- 
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">textsms</i>
+                                    <input type="text" id="autocomplete-input" class="autocomplete">
+                                    <label for="autocomplete-input">Autocomplete</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+
                 </div>
             </div>
         </div>
@@ -150,14 +167,30 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
         M.AutoInit();
 
         $(document).ready(function () {
             $(".dropdown-trigger").dropdown();
         });
+
+
+        function sm(){
+            document.getElementById("searchMentor").addEventListener('onKeyPress', (event) => {
+                axios.post('/searchMentor',{
+                    searchMentor: event.target.value
+                })
+                .then(function (response){
+                    console.log(response.data)
+                })
+            })
+        }
+
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="javascripts/studentdashboard.js"></script>
 </body>
 
 </html>
